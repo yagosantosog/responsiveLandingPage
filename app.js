@@ -1,6 +1,13 @@
-let toggle_btn = document.querySelector('.toggle-btn');
-let big_wrapper = document.querySelector('.big-wrapper');
+let toggle_btn 
+let big_wrapper 
 const main = document.querySelector('main');
+
+function declare() {
+    toggle_btn = document.querySelector('.toggle-btn');
+    big_wrapper = document.querySelector('.big-wrapper');
+}
+
+declare();
 
 let dark = false;
 
@@ -14,7 +21,20 @@ function toggleAnimation() {
         clone.classList.remove("dark");
         clone.classList.add("light");
     }
+    clone.classList.add("copy")
     main.appendChild(clone);
+
+    clone.addEventListener("animationend", () => {
+        big_wrapper.remove();
+        clone.classList.remove("copy");
+        declare();
+        events();
+    })
 }
 
-toggle_btn.addEventListener('click', toggleAnimation);
+
+function events() {
+    toggle_btn.addEventListener('click', toggleAnimation);
+}
+
+events();

@@ -30,6 +30,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 img {
     width: 100%;
 }
@@ -197,4 +202,21 @@ header .container {
     bottom: -180px;
     left: -15px;
     opacity: 0.1;
+}
+
+.copy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    animation: appear 1s 1 both;
+}
+
+@keyframes appear {
+    0% {
+        clip-path: circle(30% at -25% -25%);
+    }
+    100%{
+        clip-path: circle(150% at 0 0);
+    }
 }
