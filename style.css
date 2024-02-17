@@ -123,6 +123,55 @@ header .container {
     transform: scale(1)  !important;
 }
 
+.hamburger-menu {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: var(--darkTwo);
+    transition: .5s;
+}
+
+.bar::before, .bar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--darkTwo);
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.bar::before {
+    transform: translateY(-8px);
+}
+
+.bar::after {
+    transform: translateY(8px);
+}
+
+.big-wrapper.active .hamburger-menu .bar{
+    background: transparent;
+}
+
+.big-wrapper.active .hamburger-menu .bar::before {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.big-wrapper.active .hamburger-menu .bar::after {
+    transform: translateY(0) rotate(45deg);
+}
+
 .showcase-area .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
