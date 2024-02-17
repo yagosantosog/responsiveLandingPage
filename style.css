@@ -220,3 +220,15 @@ header .container {
         clip-path: circle(150% at 0 0);
     }
 }
+
+@media screen and (max-width: 870px) {
+
+    .showcase-area .container {
+        grid-template-columns: 1fr;
+    }
+
+    .person {
+        width: 100%;
+        transform: none;
+    }
+}
