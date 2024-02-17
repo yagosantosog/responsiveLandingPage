@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
+.light {
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
     --backgroundColor: #f1f8fc;
@@ -8,6 +8,16 @@
     --darkTwo: #45424b;
     --lightOne: #919191;
     --lightTwo: #aaa;
+}
+
+.dark {
+    --mainColor: #64bcf4;
+    --hoverColor: #5bacdf;
+    --backgroundColor: #192e3a;
+    --darkOne: #f3f3f3;
+    --darkTwo: #fff;
+    --lightOne: #ccc;
+    --lightTwo: #e7e3e3;
 }
 
 *, *::before, *::after {
@@ -29,6 +39,7 @@ a {
 }
 
 .big-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -136,4 +147,54 @@ header .container {
 .person {
     width: 123%;
     transform: translate(15%, 25px);
+}
+
+.toggle-btn {
+    display: inline-block;
+    border: none;
+    background: var(--darkTwo);
+    color: var(--backgroundColor);
+    cursor: pointer;
+    height: 39px;
+    width: 39px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transition: .3s;
+}
+
+.toggle-btn i {
+    line-height: 39px;
+}
+
+.big-wrapper.light .toggle-btn i:last-child {
+    display: none;
+    
+}
+
+.big-wrapper.light .toggle-btn i:first-child {
+    display: block;
+    
+}
+
+.big-wrapper.dark .toggle-btn i:last-child {
+    display: block;
+    
+}
+
+.big-wrapper.dark .toggle-btn i:first-child {
+    display: none;
+    
+}
+
+.toggle-btn:hover {
+    background: var(--mainColor);
+}
+
+.shape {
+    position: absolute;
+    z-index: 0;
+    width: 500px;
+    bottom: -180px;
+    left: -15px;
+    opacity: 0.1;
 }
